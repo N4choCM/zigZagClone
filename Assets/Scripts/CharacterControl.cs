@@ -7,12 +7,14 @@ public class CharacterControl : MonoBehaviour
     private Animator animator; // Animator component for character animations
     private Rigidbody rb;
     private bool goRight = true;
+    private GameManager gm; // Reference to the GameManager
 
     // Awake is called when the script instance is being loaded
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        gm = FindFirstObjectByType<GameManager>(); // Find the GameManager in the scene
     }
 
     // Update is called once per frame
@@ -25,15 +27,29 @@ public class CharacterControl : MonoBehaviour
 
         RaycastHit hit;
 
-        if(!Physics.Raycast(rayStart.position, -transform.up, out hit, Mathf.Infinity))
+        if (!Physics.Raycast(rayStart.position, -transform.up, out hit, Mathf.Infinity))
         {
             animator.SetTrigger("Falling");
+        }
+
+        if (transform.position.y < -10)
+        {
+            gm.EndGame(); // Call EndGame method in GameManager if the character falls below a certain height
         }
     }
 
     // FixedUpdate is called every fixed frame-rate frame
     private void FixedUpdate()
     {
+        if (!gm.isGameStarted)
+        {
+            return; // Exit if the game has not started
+        }
+        else
+        {
+            animator.SetTrigger("GameStarted");
+        }
+
         rb.transform.position = transform.position + transform.forward * 2 * Time.deltaTime;
     }
 
