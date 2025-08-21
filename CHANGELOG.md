@@ -1,6 +1,14 @@
+# 📅 21/08/2025
+
+## 🆕 Features
+
+### 0.3.0
+
+- ✅ ADDED: Crystals in the UI and scoring logic
+
 # 📅 07/08/2025
 
-## Features
+## 🆕 Features
 
 ### 0.2.0
 

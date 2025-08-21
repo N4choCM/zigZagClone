@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public bool isGameStarted;
+    public int score;
+    public Text scoreText; // UI Text to display the score
 
     public void StartGame()
     {
@@ -22,5 +25,12 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         SceneManager.LoadScene(0); // Reload the current scene to restart the game
+    }
+
+    // Method to increase the score in one point
+    public void IncreaseScore()
+    {
+        score++;
+        scoreText.text = score.ToString(); // Update the score text in the UI
     }
 }
