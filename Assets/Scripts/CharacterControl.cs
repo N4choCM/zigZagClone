@@ -56,6 +56,11 @@ public class CharacterControl : MonoBehaviour
     // Called when the user presses the space key to change direction. to the right or left
     private void ChangeDirection()
     {
+        if (!gm.isGameStarted)
+        {
+            return; // Exit if the game has not started
+        }
+
         goRight = !goRight;
 
         if (goRight)
@@ -65,6 +70,15 @@ public class CharacterControl : MonoBehaviour
         else
         {
             transform.rotation = Quaternion.Euler(0, -45, 0);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Crystal")
+        {
+            Destroy(other.gameObject); // Destroy the crystal object
+            gm.IncreaseScore(); // Call IncreaseScore method in GameManager to increase the score
         }
     }
 }
