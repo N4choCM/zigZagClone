@@ -7,6 +7,12 @@ public class GameManager : MonoBehaviour
     public bool isGameStarted;
     public int score;
     public Text scoreText; // UI Text to display the score
+    public Text maxScoreText; // UI Text to display the max score
+
+    private void Awake()
+    {
+        maxScoreText.text = "Max Score: " + GetMaxScore().ToString(); // Initialize max score text
+    }
 
     public void StartGame()
     {
@@ -32,5 +38,16 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString(); // Update the score text in the UI
+
+        if(score > GetMaxScore())
+        {
+            PlayerPrefs.SetInt("MaxScore", score);
+            maxScoreText.text = "Max Score: " + score.ToString(); // Update the max score text in the UI
+        }
+    }
+    
+    public int GetMaxScore()
+    {
+        return PlayerPrefs.GetInt("MaxScore");
     }
 }

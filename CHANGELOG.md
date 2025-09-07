@@ -1,3 +1,11 @@
+# 📅 08/09/2025
+
+## 🆕 Features
+
+### 0.4.0
+
+- ✅ ADDED: Max score logic
+
 # 📅 21/08/2025
 
 ## 🆕 Features
