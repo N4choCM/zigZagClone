@@ -1,3 +1,11 @@
+# 📅 11/09/2025
+
+## 🆕 Features
+
+### 0.4.0
+
+- ✅ ADDED: Crystal vanish effect
+
 # 📅 08/09/2025
 
 ## 🆕 Features

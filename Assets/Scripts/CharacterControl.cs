@@ -8,6 +8,7 @@ public class CharacterControl : MonoBehaviour
     private Rigidbody rb;
     private bool goRight = true;
     private GameManager gm; // Reference to the GameManager
+    public GameObject crystalEffect; // Particle effect prefab for collecting crystals
 
     // Awake is called when the script instance is being loaded
     void Awake()
@@ -77,8 +78,10 @@ public class CharacterControl : MonoBehaviour
     {
         if (other.tag == "Crystal")
         {
-            Destroy(other.gameObject); // Destroy the crystal object
             gm.IncreaseScore(); // Call IncreaseScore method in GameManager to increase the score
+            GameObject go = Instantiate(crystalEffect, rayStart.transform.position, Quaternion.identity);
+            Destroy(go, 2f); // Destroy the particle effect after 2 seconds
+            Destroy(other.gameObject); // Destroy the crystal object
         }
     }
 }

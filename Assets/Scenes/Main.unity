@@ -2979,6 +2979,10 @@ PrefabInstance:
       propertyPath: rayStart
       value: 
       objectReference: {fileID: 809508506}
+    - target: {fileID: 2973828194088896744, guid: 82682706433d54208b93c4ec7da792ba, type: 3}
+      propertyPath: crystalEffect
+      value: 
+      objectReference: {fileID: 2406902666786871683, guid: 8cf54986a15fd4b43a9aafb354a2392b, type: 3}
     - target: {fileID: 7095290010610594234, guid: 82682706433d54208b93c4ec7da792ba, type: 3}
       propertyPath: m_Controller
       value: 
