@@ -1,8 +1,16 @@
+# 📅 15/09/2025
+
+## 🆕 Features
+
+### 0.6.0
+
+- ✅ ADDED: Loop with background music
+
 # 📅 11/09/2025
 
 ## 🆕 Features
 
-### 0.4.0
+### 0.5.0
 
 - ✅ ADDED: Crystal vanish effect
 
