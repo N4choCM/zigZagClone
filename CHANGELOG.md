@@ -1,5 +1,11 @@
 # 📅 18/09/2025
 
+## ‼ Releases
+
+### 1.0.0
+
+- 🚀 RELEASED FIRST VERSION
+
 ## 🆕 Features
 
 ### 0.7.0
