@@ -1,3 +1,11 @@
+# 📅 18/09/2025
+
+## 🆕 Features
+
+### 0.7.0
+
+- ✅ ADDED: Automatic map build
+
 # 📅 15/09/2025
 
 ## 🆕 Features

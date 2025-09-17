@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         isGameStarted = true;
         Debug.Log("Game Started");
+        FindFirstObjectByType<GamePath>().InitMapBuild(); // Start building the map
     }
 
     private void Update()
